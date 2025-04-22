@@ -8,11 +8,14 @@
 body, html {
     height: 100%;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Ensure the split-screen takes full height */
 .split-screen {
     display: flex;
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
+    flex-direction: row; /* Default for larger screens */
 }
 
 .left, .right {
@@ -22,10 +25,11 @@ body, html {
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    min-height: 100%; /* Ensure sections fill the height */
 }
 
 .left {
-    background: url('Kiddies\ Code.jpg') no-repeat center center/cover; /* Add your image path here */
+    background: url('/Kiddies\ Code.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
 }
@@ -78,14 +82,16 @@ body, html {
 .sign-up-form button:hover {
     background-color: #020157;
 }
+
 p {
     margin-top: 20px;
     color: #ffffff;
 }
+
 h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #000000;
+    color: black;
 }
 
 .toggle-password {
@@ -94,6 +100,62 @@ h1 {
     margin-left: 10px;
     user-select: none;
     vertical-align: middle;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .split-screen {
+        flex-direction: column; /* Stack sections vertically on tablets */
+    }
+
+    .left, .right {
+        flex: none;
+        height: 50%; /* Adjust height for stacked layout */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust font size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .split-screen {
+        flex-direction: column; /* Stack sections vertically */
+        height: 100%; /* Ensure it fits the viewport */
+    }
+
+    .left, .right {
+        height: 50vh; /* Each section takes half the viewport height */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .sign-up-form {
+        width: 90%; /* Reduce form width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .split-screen {
+        flex-direction: column; /* Stack sections vertically */
+        height: 100%; /* Ensure it fits the viewport */
+    }
+
+    .left, .right {
+        height: auto; /* Allow sections to adjust height automatically */
+        padding: 10px;
+    }
+
+    .sign-up-form {
+        width: 100%; /* Full width for mobile */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
+
+    .sign-up-form button {
+        font-size: 0.9rem; /* Adjust button font size for mobile */
+    }
 }
 
 /* Services Page Styling */
