@@ -25,45 +25,105 @@ body, html {
 }
 
 .left {
-    background: url('Kiddies\ Code.jpg') no-repeat center center/cover; /* Add your image path here */
-    color: white;
-    text-align: center;
+    background: url('/Kiddies\ Code.jpg') no-repeat center center/cover; /* Replace 'your-image.jpg' with the path to your image */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .right {
-    background-color: #010641;
+    background: url('/Kiddies Code.jpg') no-repeat center center/cover; /* Replace 'your-image.jpg' with the path to your image */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.sign-up-form {
-    background: rgb(255, 255, 255);
+/* Home Page Styling */
+.home-page {
+    background: url('/Kiddies Code.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.text-container button,
+.text-container .sign-up {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    background-color: #4cacaf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.text-container button:hover,
+.text-container .sign-up:hover {
+    background-color: #020157;
+}
+
+/* Sign-Up Form Styling */
+.sign-up-form,
+.login-form,
+.contact-form {
+    width: 100%;
+    max-width: 400px;
+    background: rgb(5, 10, 85);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    text-align: left;
 }
 
-.sign-up-form h2 {
+.sign-up-form h2,
+.login-page h1,
+.contact-page h1 {
     margin-bottom: 20px;
-    color: #333;
+    color: white;
+    font-size: 2rem;
 }
 
-.sign-up-form label {
+.sign-up-form label,
+.login-form label,
+.contact-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #555;
+    color: white;
 }
 
-.sign-up-form input {
+.sign-up-form input,
+.login-form input,
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #000d53;
     border-radius: 5px;
 }
 
-.sign-up-form button {
+.sign-up-form button,
+.login-form button,
+.contact-form button {
     width: 100%;
     padding: 10px;
     background-color: #4cacaf;
@@ -75,35 +135,142 @@ body, html {
     transition: background-color 0.3s ease;
 }
 
-.sign-up-form button:hover {
+.sign-up-form button:hover,
+.login-form button:hover,
+.contact-form button:hover {
     background-color: #020157;
 }
-p {
-    margin-top: 20px;
-    color: #ffffff;
-}
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #000000;
+
+/* Login Page Styling */
+.login-page {
+    background: url('blue.jpg') no-repeat center center/cover; /* Set the background image */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    min-height: 100vh; /* Ensure the page fills the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
 }
 
-.toggle-password {
-    cursor: pointer;
+.login-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white; /* Ensure the text is visible on the blue background */
+}
+
+.login-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4cacaf;
+    color: white;
+    border: none;
+    border-radius: 5px;
     font-size: 1rem;
-    margin-left: 10px;
-    user-select: none;
-    vertical-align: middle;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #020157;
+}
+
+.additional-info {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.additional-info a {
+    color: #4cacaf;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.additional-info a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Page Styling */
+.contact-page {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.additional-info {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.additional-info h2 {
+    font-size: 1.5rem;
+    color: #4cacaf;
+    margin-bottom: 10px;
+}
+
+.additional-info ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.additional-info li {
+    font-size: 1rem;
+}
+
+.additional-info a {
+    color: #020157;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.additional-info a:hover {
+    text-decoration: underline;
 }
 
 /* Services Page Styling */
 .services-page {
+    background: url('blue.jpg') no-repeat center center/cover; /* Set the background image */
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
-    background-image: url('/blue.jpg'); /* Add your image path here */
     color: #333;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensure the page fills the viewport height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -126,7 +293,6 @@ h1 {
     padding: 0;
 }
 
-/* Services List Styling */
 .services-list li {
     font-size: 1.2rem;
     margin: 10px 0;
@@ -139,8 +305,6 @@ h1 {
     max-width: 500px;
     text-align: left;
     color: #333;
-    position: relative;
-    overflow: hidden;
     transition: background-color 0.3s ease;
 }
 
@@ -148,131 +312,65 @@ h1 {
     background-color: #f0f0f0;
 }
 
-.services-list li:hover .emoji {
-    animation: bounce 0.5s ease-in-out infinite;
+/* Burger Menu Styling */
+.burger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
-/* Emoji Styling */
-.services-list li .emoji {
-    display: inline-block;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
 }
 
-/* Bounce Animation */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+.menu-links {
+    display: none;
+    list-style: none;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    text-align: right;
 }
 
-.services-footer {
-    margin-top: 20px;
+.menu-links.active {
+    display: block;
 }
 
+.menu-links li {
+    margin: 10px 0;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-links a:hover {
+    color: #4cacaf;
+}
+
+/* Back Button Styling */
 .back-home-button {
     display: inline-block;
     padding: 10px 20px;
-    width: 100%;
     background-color: #4cacaf;
     color: white;
-    border: none;
+    text-decoration: none;
     border-radius: 5px;
     font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
     text-align: center;
-    margin-top: 20px; /* Adds space between the button and the contact form */
+    margin-top: 20px;
 }
 
 .back-home-button:hover {
     background-color: #020157;
-}
-p {
-    margin-top: 20px;
-    color: #ffffff;
-}
-
-/* Contact Us Button */
-.contact-us-button {
-    display: block; /* Matches the block style of the "Sign Up" button */
-    width: 100%; /* Ensures it spans the full width like the "Sign Up" button */
-    padding: 10px;
-    background-color: #4cacaf; /* Same background color as the "Sign Up" button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none; /* Removes underline for the link */
-    margin-top: 10px; /* Adds space between the "Sign Up" and "Contact Us" buttons */
-}
-
-.contact-us-button:hover {
-    background-color: #020157; /* Same hover effect as the "Sign Up" button */
-}
-
-/* Contact Page Styling */
-.contact-page {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-    background-image: url('/blue.jpg'); /* Add your image path here */
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-form {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: left;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #45a049;
-}
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffffff;
 }
