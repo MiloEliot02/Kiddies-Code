@@ -8,11 +8,14 @@
 body, html {
     height: 100%;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Ensure the split-screen takes full height */
 .split-screen {
     display: flex;
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
+    flex-direction: row; /* Default for larger screens */
 }
 
 .left, .right {
@@ -22,111 +25,11 @@ body, html {
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    min-height: 100%; /* Ensure sections fill the height */
 }
 
 .left {
-    background: url('/Kiddies\ Code.jpg') no-repeat center center/cover; /* Replace 'your-image.jpg' with the path to your image */
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.right {
-    background: url('/Kiddies Code.jpg') no-repeat center center/cover; /* Replace 'your-image.jpg' with the path to your image */
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Home Page Styling */
-.home-page {
-    background: url('/Kiddies Code.jpg') no-repeat center center/cover;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.text-container {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-}
-
-.text-container button,
-.text-container .sign-up {
-    display: inline-block;
-    margin: 10px 5px;
-    padding: 10px 20px;
-    background-color: #4cacaf;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-}
-
-.text-container button:hover,
-.text-container .sign-up:hover {
-    background-color: #020157;
-}
-
-/* Sign-Up Form Styling */
-.sign-up-form,
-.login-form,
-.contact-form {
-    width: 100%;
-    max-width: 400px;
-    background: rgb(5, 10, 85);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-.sign-up-form h2,
-.login-page h1,
-.contact-page h1 {
-    margin-bottom: 20px;
-    color: white;
-    font-size: 2rem;
-}
-
-.sign-up-form label,
-.login-form label,
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: white;
-}
-
-.sign-up-form input,
-.login-form input,
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #000d53;
-    border-radius: 5px;
-}
-
-.sign-up-form button,
-.login-form button,
-.contact-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4cacaf;
+    background: url('Kiddies\ Code.jpg') no-repeat center center/cover; /* Add your image path here */
     color: white;
     border: none;
     border-radius: 5px;
@@ -201,44 +104,14 @@ body, html {
 .login-form button:hover {
     background-color: #020157;
 }
-
-.additional-info {
-    margin-top: 20px;
-    font-size: 1rem;
-}
-
-.additional-info a {
-    color: #4cacaf;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.additional-info a:hover {
-    text-decoration: underline;
-}
-
-/* Contact Page Styling */
-.contact-page {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.additional-info {
+p {
     margin-top: 20px;
     text-align: left;
 }
-
-.additional-info h2 {
-    font-size: 1.5rem;
-    color: #4cacaf;
-    margin-bottom: 10px;
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000000;
 }
 
 .additional-info ul {
@@ -261,6 +134,62 @@ body, html {
 
 .additional-info a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .split-screen {
+        flex-direction: column; /* Stack sections vertically on tablets */
+    }
+
+    .left, .right {
+        flex: none;
+        height: 50%; /* Adjust height for stacked layout */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust font size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .split-screen {
+        flex-direction: column; /* Stack sections vertically */
+        height: 100%; /* Ensure it fits the viewport */
+    }
+
+    .left, .right {
+        height: 50vh; /* Each section takes half the viewport height */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .sign-up-form {
+        width: 90%; /* Reduce form width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .split-screen {
+        flex-direction: column; /* Stack sections vertically */
+        height: 100%; /* Ensure it fits the viewport */
+    }
+
+    .left, .right {
+        height: auto; /* Allow sections to adjust height automatically */
+        padding: 10px;
+    }
+
+    .sign-up-form {
+        width: 100%; /* Full width for mobile */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
+
+    .sign-up-form button {
+        font-size: 0.9rem; /* Adjust button font size for mobile */
+    }
 }
 
 /* Services Page Styling */
